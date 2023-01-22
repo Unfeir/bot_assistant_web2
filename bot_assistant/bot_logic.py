@@ -1,10 +1,14 @@
 from appdirs import AppDirs
 from colorama import Fore, Style, init
 import os.path
-from bot_assistant.address_book_classes import AddressBook, AddressContact, Birthday, EmailContact, Phone, Record
-from bot_assistant.notes_classes import Notes, Note, Tag, Body
-from bot_assistant.sort import sort_fun
+# from bot_assistant.address_book_classes import AddressBook, AddressContact, Birthday, EmailContact, Phone, Record
+# from bot_assistant.notes_classes import Notes, Note, Tag, Body
+# from bot_assistant.sort import sort_fun
 from viewer import ContactSearch, ContactShow, ContactsShow, NoteShow, NoteSearch, NoteSearchTag
+
+from address_book_classes import AddressBook, AddressContact, Birthday, EmailContact, Phone, Record
+from notes_classes import Notes, Note, Tag, Body
+from sort import sort_fun
 
 init()
 

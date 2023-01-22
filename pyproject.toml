@@ -1,23 +1,21 @@
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "bot-assistant"
+[tool.poetry]
+name = "bot-assistant-web2"
+version = "0.1.0"
 description = "Бот асистент працює з книгою контактів, сортує файли, веде нотатки."
+authors = ["Anton Holovin <54354764+Unfeir@users.noreply.github.com>"]
 readme = "README.md"
-requires-python = ">=3.10"
-version = "1.0.0"
+license = "MIT"
+packages = [{include = "bot_assistant_web2"}]
 
-classifiers = [
-    "Scripts :: bot-assistant",
-    "Programming Language :: Python :: 3",
-]
+[tool.poetry.dependencies]
+python = "^3.10"
+colorama = "^0.4.6"
+appdirs = "^1.4.4"
 
-dependencies = [
-    "colorama",
-    "appdirs"
-]
+[tool.poetry.scripts]
+my_package_cli = 'bot_assistant.main:main'
 
-[project.scripts]
-bot-assistant = "bot_assistant.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
