@@ -622,7 +622,6 @@ def sort_notes(args):
 
 @input_error
 def show_notes(args):
-    # return NOTES.get_notes()
     return NoteShow().show(NOTES)
 
 
@@ -648,7 +647,7 @@ def search_tag(args):
         result = ""
         for i in search_args:
             print(i)
-            result += NoteSearchTag().show(NOTES, i) #NOTES.search_by_tag(i)
+            result += NoteSearchTag().show(NOTES, i)
         if result:
             return result
         else:

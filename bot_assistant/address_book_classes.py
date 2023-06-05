@@ -69,24 +69,6 @@ class AddressBook(UserDict, SaveData):
         deleted = self.data.pop(name)
         return deleted.name.value
 
-    # def search_contacts(self, search_value):
-    #     """
-    #     Метод для пошуку контактів серед книги.
-    #     """
-    #
-    #     contacts = []
-    #     for key in self.data:
-    #         val = self.data[key]
-    #         if search_value[0] in key.lower():
-    #             contacts.append(self.data[key])
-    #
-    #         else:
-    #             for phone in val.phones:
-    #                 if search_value[0] in phone.value:
-    #                     contacts.append(self.data[key])
-    #
-    #     return contacts
-
     def search_contacts_birthday(self, days):
         """
         Метод, який шукає контакти в адресній книзі,
@@ -146,13 +128,6 @@ class Record:
         self.address = []
         self.birthday = None
         self.email_list = []
-
-    # def __str__(self):
-    #     return f'{Fore.BLUE}    Name:{Style.RESET_ALL}{self.name.value} \n' \
-    #            f'{Fore.BLUE}  Phones:{Style.RESET_ALL}{self.get_information(self.phones)} \n' \
-    #            f'{Fore.BLUE} Address:{Style.RESET_ALL}{self.get_information(self.address)} \n' \
-    #            f'{Fore.BLUE}   Email:{Style.RESET_ALL}{self.get_information(self.email_list)} \n'\
-    #            f'{Fore.BLUE}Birthday:{Style.RESET_ALL}{self.birthday} '
 
     @staticmethod
     def add_information(list_info, field):

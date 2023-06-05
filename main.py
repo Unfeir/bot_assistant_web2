@@ -20,7 +20,6 @@ def main():
             print(helps())
         else:    
             fun, args = analyze_fun(user_input)
-            # print(fun, '-------', args)
             text = fun_name(fun)(args)
             print(text)
 

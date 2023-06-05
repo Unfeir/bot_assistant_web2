@@ -24,7 +24,7 @@ class ContactView(GeneralView):
 
 class GeneralShow(ABC):
     @abstractmethod
-    def show(self):
+    def show (self):
         pass
 
 
@@ -82,7 +82,7 @@ class ContactsShow(GeneralShow):
 
 class ContactSearch(GeneralShow):
     def show(self, address_book, args):
-        search_value = args[0].lower() # if args[0].isalpha() else args[0]
+        search_value = args[0].lower()  # if args[0].isalpha() else args[0]
         contacts = []
         for key in address_book.data:
             val = address_book.data[key]
@@ -102,4 +102,3 @@ class ContactSearch(GeneralShow):
             result += f'\n {separate}\n'
 
         return result
-

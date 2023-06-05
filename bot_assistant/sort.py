@@ -56,7 +56,6 @@ def sort(path, element):
     extension = element.suffix.replace(".", "").upper()
     new_name = new_stem + "." + extension
 
-    # parent_folder = path.parent
     for key, value in type_dict.items():
         if extension in value:
             new_folder = path.joinpath(key)
@@ -64,11 +63,9 @@ def sort(path, element):
             if key == "archives":
                 unpack_archive(element, new_folder.joinpath(new_stem))
                 element.unlink()
-                return
             else:
                 element.rename(new_folder / new_name)
-                # move(path, new_folder.joinpath(new_name[0])) # same but with shutil
-                return
+
 
     new_folder = path.joinpath("other")
     new_folder.mkdir(exist_ok=True)
@@ -95,6 +92,3 @@ def sort_fun(*args):
         return 'Magic worked. Look at your folder'
     else:
         return f'There is no such dir on you PC: "{path}"'
-
-
-

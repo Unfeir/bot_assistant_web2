@@ -27,34 +27,6 @@ class Notes(UserList, SaveData):
         else:
             return 'no such tag'
 
-    # def search_by_tag(self, tag):
-    #     '''шукає нотатки за тегом та виводить їх відсортовано по зростанню, приймає тег'''
-        # result = ''
-        # sorted_list = sorted(self.data, key=lambda record: record.tag.value)
-        # for idx, record in enumerate(sorted_list, start=1):
-        #
-        #     if tag.lower() in record.tag.value:
-        #         result += f'---note №{idx}---\n{str(record)}\n'
-        # return result
-
-    # def search(self, search_text):
-    #     ''' пошук по тексту, приймає текст для пошуку'''
-    #     result = ''
-    #     for idx, record in enumerate(self.data, start=1):
-    #         # print(idx, record)
-    #
-    #         if search_text in record.body.value:
-    #             # print(record)
-    #             result += f'---note №{idx}---\n{str(record)}\n'
-    #     return result
-
-    # def get_notes(self):
-    #     '''технічна функція для вивдення всіх нотатків'''
-    #     result = ''
-    #     for idx, record in enumerate(self.data, start=1):
-    #         result += f'{Fore.RED}---note №{idx}---{Style.RESET_ALL}\n{str(record)}\n'
-    #     return result
-
     def sort_notes(self, way=1):
         '''функція сортуввання. для реверсного сортування потрібно передати -1
         повертае всі ноаттки'''
@@ -89,14 +61,6 @@ class Note:
             self.tag.value.remove(tag.lower())
         except:
             raise Exception('no such tag')
-       
-            
-            
-    # def __str__(self):
-    #     return f'{Fore.GREEN}{self.tag.value}{Style.RESET_ALL}\n {Fore.BLUE}{self.body.value}{Style.RESET_ALL}\n' + 50*'-'  # + '\n'
-
-    # def __repr__(self):
-    #     return f'{self.tag.value[:3]}...\n {self.body.value[:50]}...\n' + 50*'-' +'\n'
 
 
 class Field:
@@ -112,4 +76,3 @@ class Tag(Field):
 
 class Body(Field):
     pass
-
